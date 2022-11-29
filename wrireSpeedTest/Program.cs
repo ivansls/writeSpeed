@@ -10,19 +10,9 @@ string name = Console.ReadLine();
 Console.Clear();
 string txt = "Текст - зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.";
 Console.WriteLine(txt);
-/*Thread th = new Thread(_ => {
-    while (true)
-    {
-        Console.SetCursorPosition(0, 10);
-        Console.WriteLine(wr.time);
-        Thread.Sleep(1000);
-        Console.SetCursorPosition(0, 10);
-        Console.WriteLine("     ");
-        wr.time--;
-    }
-});*/
 Class2.th.Start();
-  
+
+
 while (true)
 {
     /*if (wr.window == 0)
@@ -34,5 +24,12 @@ while (true)
         th.Abort();
     }*/
     //ConsoleKeyInfo key = Console.ReadKey(true);
-    wr.wr(txt, name);
+    if (wr.window1 == 0)
+    {
+        wr.wr(txt, name);
+    }
+    else if (wr.window1 == 2)
+    {
+        wr.menu(name);
+    }
 }

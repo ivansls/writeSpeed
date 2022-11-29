@@ -12,6 +12,7 @@ namespace wrireSpeedTest
         int posicion_y = 0;
         //public int time = 60;
         public int window = 0;
+        public int window1 = 0;
         int count = 0;
         int count_rrr = 0;
 
@@ -95,9 +96,34 @@ namespace wrireSpeedTest
                     statistic.word_error = count;
                     best.Statistic_User(statistic);
                 }
-
-                window = 2;
+                else if (keyn.Key == ConsoleKey.F1)
+                {
+                    //menu(name);
+                    window = 2;
+                    window1 = 2;
+                }
+                
             }
+        }
+
+        public void menu(string name)
+        {
+            window1 = 0;
+            Class2.time = 60;
+            Console.Clear();
+            string txt = "Текст - зафиксированная на каком-либо материальном носителе человеческая мысль; в общем плане связная и полная последовательность символов.";
+            Class2.islitenning = true;
+            Console.WriteLine(txt);
+            if (window != 2)
+            {
+                Class2.th.Start();
+            }
+            
+            window = 0;
+            posicion_x = 0;
+            posicion_y = 0;
+            count = 0;
+            wr(txt, name);
         }
     }
 }
